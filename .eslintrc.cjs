@@ -12,14 +12,10 @@ module.exports = {
     'prettier',
   ],
   overrides: [
-    {
-      files: ['*.stories.@(ts|tsx|js)'],
-      extends: ['plugin:storybook/recommended'],
-    },
-    {
-      files: ['*.test.*+(ts|tsx)'],
-      extends: ['plugin:jest-dom/recommended', 'plugin:testing-library/react'],
-    },
+    // {
+    //   files: ['*.test.*+(ts|tsx)'],
+    //   extends: ['plugin:jest-dom/recommended', 'plugin:testing-library/react'],
+    // },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
