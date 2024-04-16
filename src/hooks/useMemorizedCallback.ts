@@ -8,7 +8,7 @@ import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 export const useMemorizedCallback = <P extends unknown[], R>(
   callback: (...args: P) => R,
 ) => {
-  const ref = useRef<typeof callback>(callback);
+  const ref = useRef(callback);
 
   useIsomorphicLayoutEffect(() => {
     ref.current = callback;
