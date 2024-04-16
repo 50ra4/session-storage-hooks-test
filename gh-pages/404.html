@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vite + React + TS</title>
+    <script>
+      // @see https://maku.blog/p/9u8it5f/
+      // https://yourname.github.io/repo-name/book/123
+      // -> https://yourname.github.io/repo-name?_p=book%2F123
+      const origin = window.location.origin; // https://yourname.github.io
+      const paths = window.location.pathname.slice(1).split('/'); // [repo-name, book, 123]
+      const [subDirectory, ...restPath] = paths;
+      window.location.href = `${origin}/${subDirectory}/?_p=${encodeURIComponent(
+        `${restPath.join('/')}${window.location.search}${window.location.hash}`,
+      )}`;
+    </script>
+  </head>
+  <body></body>
+</html>
